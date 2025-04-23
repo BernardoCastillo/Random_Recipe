@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Generator - JSON</title>
+    <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Random Recipe Generator</h1>
+            <p>Click the button to generate a random recipe from our JSON data</p>
+        </header>
+       
+        <div class="explanation">
+            <h3>What is JSON?</h3>
+            <p>JSON (JavaScript Object Notation) is a lightweight data-interchange format that's easy for humans to read and write and easy for machines to parse and generate.</p>
+            <p>In this app, we're working with recipe data stored in this format:</p>
+            <pre>
+            {
+                "name": "Recipe Name",
+                "time": "30 minutes",
+                "servings": 4,
+                "ingredients": ["item1", "item2"],
+                "steps": ["step1", "step2"]
+            }</pre>
+
+        </div>
+        <div class="controls">
+            <button id="generateBtn">Generate Random Recipe</button>
+        </div>
+       
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Generating recipe...</p>
+        </div>
+       
+        <div class="error-message" id="errorMessage">
+            Sorry, something went wrong. Please try again.
+        </div>
+       
+        <div class="recipe-card" id="recipeCard">
+            <h2 class="recipe-name" id="recipeName">Recipe Name</h2>
+            <div class="recipe-details">
+                <span id="prepTime"><i>⏱️</i> Prep Time: -</span>
+                <span id="servings"><i>👥</i> Servings: -</span>
+            </div>
+           
+            <div class="ingredients-list">
+                <h3>Ingredients</h3>
+                <ul id="ingredientsList">
+                    <!-- Ingredients will be added here -->
+                </ul>
+            </div>
+           
+            <div class="steps-list">
+                <h3>Instructions</h3>
+                <ol id="stepsList">
+                    <!-- Steps will be added here -->
+                </ol>
+            </div>
+           
+            <button class="toggle-json" id="toggleJsonBtn">Show JSON Data</button>
+            <div class="json-display" id="jsonDisplay" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="recipes.js"></script>
+</body>
+</html>
+
